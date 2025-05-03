@@ -11,6 +11,9 @@ app.use(cors());
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/items', require('./routes/itemRoutes'));
 
+app.get('/', (req, res) => {
+  res.send('SmartInventory Backend is Running ✅');
+});
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
